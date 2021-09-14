@@ -1,5 +1,10 @@
 package Super;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Inventario extends Super_Online {
@@ -21,12 +26,32 @@ public class Inventario extends Super_Online {
 	}*/
 
 	public static void cargarProductos(){
+		 try {
+			BufferedReader bufReader = new BufferedReader(new FileReader("C:/Users/2dam3/Desktop/super_online/productos.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
 	public static void guardarProductos(){
 
+		 FileWriter fichero = null;
+	        PrintWriter pw = null;
+	        try
+	        {
+	            fichero = new FileWriter("C:/Users/2dam3/Desktop/super_online/productos.txt");
+	            //pw = new PrintWriter(fichero);
 
+	            for (Producto p : lista){
+	            	fichero.write(p.volcar(lista));
+	            }
+	            fichero.close();
+
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
 
 	}
 

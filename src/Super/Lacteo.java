@@ -35,7 +35,7 @@ public class Lacteo extends Perecedero {
 		System.out.println("Introduza el lote del lacteo");
 		setLote(sc.nextLine());
 
-		sc.nextLine();
+
 
 		System.out.println("El embase del lacteo es fragil");
 		fragil=sc.nextLine();

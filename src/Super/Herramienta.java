@@ -1,6 +1,7 @@
 package Super;
 
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Herramienta extends NoPerecedero implements Enviable {
 
@@ -58,6 +59,8 @@ public class Herramienta extends NoPerecedero implements Enviable {
 
 	public String volcar(){
 
+
+
 		return "";
 	}
 
@@ -67,9 +70,9 @@ public class Herramienta extends NoPerecedero implements Enviable {
 		System.out.println("tarifa envio: "+tarifaEnvio()
 				);
 		if(envioFragil()==true){
-			System.out.println("El paquete es fragil");
+			System.out.println("El paquete es fragil \n");
 		}else{
-			System.out.println("El paquete no es fragil");
+			System.out.println("El paquete no es fragil \n");
 		}
 
 	}

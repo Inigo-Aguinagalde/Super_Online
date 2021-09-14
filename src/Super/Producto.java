@@ -1,6 +1,10 @@
 package Super;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public abstract class Producto {
 
@@ -80,7 +84,8 @@ public abstract class Producto {
 
 	public void imprimir(){
 
-		System.out.println("Precio: "+getPrecio()+"\n "
+		System.out.println("Codigo: "+getCodigo()+"\n "
+				+"Precio: "+getPrecio()+"\n "
 				+ "nombre: "+getNombre()+"\n "
 				+"precio: "+getPrecio()+"\n "
 				+ "cantidad: "+getCantidad()+"\n "
@@ -94,12 +99,28 @@ public abstract class Producto {
 	public void imprimirEnvio(){
 
 
+		FileWriter fichero = null;
+		PrintWriter pw = null;
+		try
+		{
+			fichero = new FileWriter("C:/Users/2dam3/Desktop/super_online/productos.txt");
+			pw = new PrintWriter(fichero);
+
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 
-	public String volcar(){
+	public String volcar(ArrayList<Producto> lista){
 
-		return "";
+		String listString = lista.stream().map(Object::toString)
+                .collect(Collectors.joining(", "));
+		
+		return listString;
 	}
 
 
